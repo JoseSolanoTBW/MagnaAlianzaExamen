@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Productos</title>
+<style type="text/css">
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+.button {
+	background-color: Crimson;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+}
+
+.button:focus, .button:hover {
+	background-color: FireBrick;
+	color: White;
+}
+</style>
+</head>
+<body class="body-cls">
+	<div>
+	<h1>Productos</h1>
+		<ul>
+			<div th:each="entry,status : ${productos}">
+				<li>
+							<h4>
+								Numero de finca: <span th:text="${entry.numeroFinca}"></span>
+							</h4>
+							<p>
+								<small><i>Tipo de cafe: </i> <span
+									th:text="${entry.tipo}"></span> </small>
+							</p>
+							<p>
+								Cedula propietario: <span th:text="${entry.cedulaPropietario}"></span>
+							</p>							
+					</p>
+				</li>
+			</div>
+		</ul>
+		<a href="#" th:href="${'/productos/crear/' + idFinca}" class="button js-button" >Agregar tipo de cafe a la finca  </a>
+		<a href="/" class="button js-button" role="button">Ir al inicio</a>
+	</div>
+</body>
+</html>

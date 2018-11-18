@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Productores</title>
+<style type="text/css">
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+.button {
+	background-color: Crimson;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+}
+
+.button:focus, .button:hover {
+	background-color: FireBrick;
+	color: White;
+}
+</style>
+</head>
+<body class="body-cls">
+	<div>
+	<h1>Productores</h1>
+		<ul>
+			<div th:each="entry,status : ${productores}">
+				<li>
+							<h4>
+								Cedula: <span th:text="${entry.cedula}"></span>
+							</h4>
+							<p>
+								<small><i>Nombre: </i> <span
+									th:text="${entry.nombre}"></span> </small>
+							</p>
+							<p>
+								Direccion: <span th:text="${entry.direccionNominal}"></span>
+							</p>
+							<p>
+								Provincia: <span th:text="${entry.direccionPolitica}"></span>
+							</p>
+							<p>
+								Empresa: <span th:text="${entry.empresa}"></span>
+							</p>
+							<p>
+							<a href="#" th:href="${'/productor/ver/' + entry.cedula}" class="button js-button" > Ver Productor </a>
+					</p>
+				</li>
+			</div>
+		</ul>
+		<a href="/" class="button js-button" role="button">Ir al inicio</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+.button {
+	background-color: Crimson;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+}
+
+.button:focus, .button:hover {
+	background-color: FireBrick;
+	color: White;
+}
+</style>
+</head>
+<body class="body-cls">
+
+	<h1>Result</h1>
+    <p th:text="'Cedula: ' + ${productor.cedula}" />
+    <p th:text="'Nombre: ' + ${productor.nombre}" />
+    <p th:text="'Empresa: ' + ${productor.empresa}" />
+    <a href="/productor/todos" class="button js-button" role="button">Ver todos los productores</a>
+	<a href="#" th:href="${'/finca/crearFinca/' + productor.cedula}" class="button js-button" > Crear Finca</a>	
+</body>
+</html>

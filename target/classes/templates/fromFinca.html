@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Finca</title>
+<style type="text/css">
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+</style>
+</head>
+<body class = "body-cls">
+	<div> <h1>Finca</h1></div>
+	<div>
+		<h3>Formulario</h3>
+		<form action="" th:action="@{/finca/crearFinca}" th:object="${finca}" method="post">
+			<div>
+				<label>Cedula productor:</label>
+				<input type= "text" id="cedulaPropietario" th:field="*{cedulaPropietario}"/>
+			</div>
+			<div>
+				<label>Numero Finca:</label>
+				<input type= "text" id="nombre"  th:field="*{numeroFinca}"/>
+			</div>
+			<div>
+				<label>Tamanno: </label>
+				<input type= "text" id="size"  th:field="*{tamanno}"/>
+			</div>			
+			<div>
+				<input type= "submit" id="send" value= "Enviar"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+</body>
+</html>

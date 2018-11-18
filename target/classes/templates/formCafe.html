@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+</style>
+</head>
+<body class = "body-cls">
+	<div> <h1>Productor</h1></div>
+	<div>
+		<h3>Formulario</h3>
+		<form action="" th:action="@{/productos/crear}" th:object="${cafe}" method="post">
+			<div>
+				<label>Numero finca:</label>
+				<input type= "text" id="cedula" th:field="*{numeroFinca}"/>
+			</div>
+			<div>
+				<label>Tipo:</label>
+				<input type= "text" id="nombre"  th:field="*{tipo}"/>
+			</div>			
+			<div>
+				<input type= "submit" id="send" value= "Enviar"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

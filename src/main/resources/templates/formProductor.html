@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+</style>
+</head>
+<body class = "body-cls">
+	<div> <h1>Productor</h1></div>
+	<div>
+		<h3>Formulario</h3>
+		<form action="" th:action="@{/productor/crearProductor}" th:object="${productor}" method="post">
+			<div>
+				<label>Cedula productor:</label>
+				<input type= "text" id="cedula" th:field="*{cedula}"/>
+			</div>
+			<div>
+				<label>Nombre:</label>
+				<input type= "text" id="nombre"  th:field="*{nombre}"/>
+			</div>
+			<div>
+				<label>Direccion nominal:</label>
+				<input type= "text" id="direccionNominal"  th:field="*{direccionNominal}"/>
+			</div>
+			<div>
+				<label>Direccion politica:</label>
+				<input type= "text" id="direccionPolitica" th:field="*{direccionPolitica}"/>
+			</div>
+			<div>
+				<label>Empresa:</label>
+				<input type= "text" id="empresa"  th:field="*{empresa}"/>
+			</div>
+			<div>
+				<input type= "submit" id="send" value= "Enviar"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Productor</title>
+<style type="text/css">
+
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+.button {
+	background-color: Crimson;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+}
+
+.button:focus, .button:hover {
+	background-color: FireBrick;
+	color: White;
+}
+</style>
+</head>
+<body class ="body-cls">
+
+	<h1>Productor</h1>
+    <p th:text="'Cedula: ' + ${productores.cedula}" />
+    <p th:text="'Nombre: ' + ${productores.nombre}" />
+    <p th:text="'Direccion: ' + ${productores.direccionNominal}" />
+    <p th:text="'Empresa: ' + ${productores.empresa}" />
+    <div>
+		<h2>Fincas:</h2>
+		<ul>
+			<div th:each="entry,status : ${fincas}">
+				<li>
+							<h4>
+								Numero de finca: <span th:text="${entry.numeroFinca}">TITLE</span>
+							</h4>
+							<p>
+								<small><i>Tamanno: </i> <span
+									th:text="${entry.tamanno}">CREATED</span> </small>
+							</p>	
+							<a href="#" th:href="${'/productos/ver/' + entry.numeroFinca}" class="button js-button" role="button">Ver Cafes</a>						
+				</li>
+			</div>
+		</ul>
+	</div>
+    
+    <a href="#" th:href="${'/finca/crearFinca/' + productores.cedula}" class="button js-button" role="button">Agregar finca</a>
+    <a href="/productor/todos" class="button js-button" role="button">Ver todos los productores</a>
+	<a href="/" class="button js-button" role="button">Ir al inicio</a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Examen</title>
+<style type="text/css">
+
+.body-cls{
+	font-family: Arial, Helvetica, Sans-serif;
+	background-color: #f1f1f1;
+}
+.button {
+	background-color: Crimson;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+}
+
+.button:focus, .button:hover {
+	background-color: FireBrick;
+	color: White;
+}
+</style>
+</head>
+<body class ="body-cls">
+	<div>
+		<h1>Empresa Magna Alianza</h1>
+		<ul>
+			Productores:  <a href="/productor/todos" class="button js-button" role="button">Seccion de Productores</a>					
+		</ul>
+	</div>
+	<form action="" th:action="@{/productor/buscar}" th:object="${productor}" method="post">
+			<div>
+				<label>Buscar Productor::</label>
+				<input type= "text" id="nombre" th:field="*{nombre}"/>
+			</div>
+				
+			<div>
+				<input type= "submit" id="send" value= "Buscar Productor"/>
+			</div>
+	</form>
+</body>
+</html>
